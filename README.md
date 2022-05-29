@@ -1,25 +1,9 @@
-# Let Invariant Rationale Discovery Inspire Graph Contrastive Learning
+# Superpixel datasets experiments
+## 1. Requirements
+Please follow this [repo](https://github.com/graphdeeplearning/benchmarking-gnns) to create your environment and download datasets.
 
-PyTorch implementation for *Let Invariant Rationale Discovery Inspire Graph Contrastive Learning*
+## 2. Pre-training:
+`python main_superpixels_rgcl.py `
 
-Sihang Li, Xiang Wang*, An Zhang, Ying-Xin Wu, Xiangnan He and Tat-Seng Chua
-
-In ICML 2022.
-
-## Experiments
-
-* Transfer Learning
-
-* Unsupervised TU datasets
-
-* Semi-supervised MNIST
-
-
-
-## Potential Issues
-
-Some issues might occur due to the version mismatch.
-
-* ```KeyError:'num_nodes'``` in unsupervised TU datasets: [#36](https://github.com/Shen-Lab/GraphCL/issues/36), [#41](https://github.com/Shen-Lab/GraphCL/issues/41)
-* ```AttributeError: 'Data' object has no attribute 'cat_dim'``` in Transfer Learning: [#13](https://github.com/Shen-Lab/GraphCL/issues/13)
-
+## 3. Finetuning:
+`python main_superpixels_graph_classification.py`
