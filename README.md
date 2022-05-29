@@ -15,3 +15,11 @@ In ICML 2022.
 * Semi-supervised MNIST
 
 
+
+## Potential Issues
+
+Some issues might occur due to the version mismatch.
+
+* ```KeyError:'num_nodes'``` in unsupervised TU datasets: [#36](https://github.com/Shen-Lab/GraphCL/issues/36), [#41](https://github.com/Shen-Lab/GraphCL/issues/41)
+* ```AttributeError: 'Data' object has no attribute 'cat_dim'``` in Transfer Learning: [#13](https://github.com/Shen-Lab/GraphCL/issues/13)
+
