@@ -20,7 +20,7 @@ We release our pre-trained model in folder *models_rgcl*.
 We suggest to run it on Linux Platform.
 
 ```
-python pretrain_rgcl.py --num_worker 8
+python pretrain_rgcl.py --num_workers 8
 ```
 
 
