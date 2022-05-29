@@ -1,6 +1,6 @@
 ## Dependencies
 
-* [PyTorch Geometric](https://github.com/rusty1s/pytorch_geometric#installation)==1.6.0
+* [PyTorch Geometric](https://github.com/rusty1s/pytorch_geometric#installation)==1.7.0
 
 
 
