@@ -6,4 +6,4 @@ Please follow this [repo](https://github.com/graphdeeplearning/benchmarking-gnns
 `python main_superpixels_rgcl.py `
 
 ## 3. Finetuning:
-`python main_superpixels_graph_classification.py`
+`python main_superpixels_graph_classification.py --model_file /rgcl_gnn.pkl --rg_file /rgcl_rationale_generator.pkl`
