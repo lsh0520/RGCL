@@ -19,22 +19,15 @@ Without supervision signals, **<u>R</u>ationale-aware <u>G</u>raph <u>C</u>ontra
 If you want to use our codes and datasets in your research, please cite:
 
 ```
-@misc{https://doi.org/10.48550/arxiv.2206.07869,
-  doi = {10.48550/ARXIV.2206.07869},
-
-  url = {https://arxiv.org/abs/2206.07869},
-  
-  author = {Li, Sihang and Wang, Xiang and zhang, An and Wu, Yingxin and He, Xiangnan and Chua, Tat-Seng},
-  
-  keywords = {Machine Learning (cs.LG), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  
-  title = {Let Invariant Rationale Discovery Inspire Graph Contrastive Learning},
-  
-  publisher = {arXiv},
-  
-  year = {2022},
-  
-  copyright = {Creative Commons Attribution 4.0 International}
+@inproceedings{RGCL,
+  author    = {Sihang Li and
+               Xiang Wang and
+               An Zhang and
+               Xiangnan He and
+               Tat-Seng Chua},
+  title     = {Let Invariant Rationale Discovery Inspire Graph Contrastive Learning},
+  booktitle = {{ICML}},
+  year      = {2022}
 }
 
 ```
