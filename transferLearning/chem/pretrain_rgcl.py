@@ -209,8 +209,7 @@ def main():
     model.to(device)
 
     #set up optimizer
-    optimizer = optim.Adam([{'params': model.gnn.parameters()}, {'params': model.node_imp_estimator.parameters()}],
-                           lr=args.lr, weight_decay=args.decay)
+    optimizer = optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.decay)
     print(optimizer)
 
     for epoch in range(1, args.epochs + 1):
