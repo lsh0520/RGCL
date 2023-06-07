@@ -284,6 +284,7 @@ def drop_nodes_prob(data, node_score, rho):
     edge_index = adj.nonzero().t()
 
     data.edge_index = edge_index
+    #the node droping operation is performed in rgcl.py 
 
     return data
 
@@ -314,5 +315,6 @@ def drop_nodes_cp(data, node_score, rho):
     edge_index = adj.nonzero().t()
 
     data.edge_index = edge_index
+    #the node droping operation is performed in rgcl.py 
 
     return data
