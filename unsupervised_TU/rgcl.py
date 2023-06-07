@@ -166,7 +166,7 @@ if __name__ == '__main__':
             data_imp = model.explain(data.x, data.edge_index, data.batch)
             x = model(data.x, data.edge_index, data.batch, data_imp)
 
-            if args.aug == 'dnodes' or args.aug == 'subgraph' or args.aug == 'random2' or args.aug == 'random3' or args.aug == 'random4':
+            if args.aug == 'drop_ra':
                 edge_idx = data_aug.edge_index.numpy()
                 _, edge_num = edge_idx.shape
                 idx_not_missing = [n for n in range(node_num) if (n in edge_idx[0] or n in edge_idx[1])]
