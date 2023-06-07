@@ -283,8 +283,17 @@ def drop_nodes_prob(data, node_score, rho):
     adj[:, idx_drop] = 0
     edge_index = adj.nonzero().t()
 
-    data.edge_index = edge_index
-    #the node droping operation is performed in rgcl.py 
+    edge_idx = edge_index.numpy()
+    _, edge_num = edge_idx.shape
+    idx_not_missing = [n for n in range(node_num) if (n in edge_idx[0] or n in edge_idx[1])]
+
+    node_num_aug = len(idx_not_missing)
+    data.x = data.x[idx_not_missing]
+
+    idx_dict = {idx_not_missing[n]: n for n in range(node_num_aug)}
+    edge_idx = [[idx_dict[edge_idx[0, n]], idx_dict[edge_idx[1, n]]] for n in range(edge_num) if
+                not edge_idx[0, n] == edge_idx[1, n]]
+    data.edge_index = torch.tensor(edge_idx).transpose_(0, 1)
 
     return data
 
@@ -314,7 +323,16 @@ def drop_nodes_cp(data, node_score, rho):
     adj[:, idx_drop] = 0
     edge_index = adj.nonzero().t()
 
-    data.edge_index = edge_index
-    #the node droping operation is performed in rgcl.py 
+    edge_idx = edge_index.numpy()
+    _, edge_num = edge_idx.shape
+    idx_not_missing = [n for n in range(node_num) if (n in edge_idx[0] or n in edge_idx[1])]
+
+    node_num_aug = len(idx_not_missing)
+    data.x = data.x[idx_not_missing]
+
+    idx_dict = {idx_not_missing[n]: n for n in range(node_num_aug)}
+    edge_idx = [[idx_dict[edge_idx[0, n]], idx_dict[edge_idx[1, n]]] for n in range(edge_num) if
+                not edge_idx[0, n] == edge_idx[1, n]]
+    data.edge_index = torch.tensor(edge_idx).transpose_(0, 1)
 
     return data
