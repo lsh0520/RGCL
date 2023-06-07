@@ -166,31 +166,31 @@ if __name__ == '__main__':
             data_imp = model.explain(data.x, data.edge_index, data.batch)
             x = model(data.x, data.edge_index, data.batch, data_imp)
 
-            if args.aug == 'drop_ra':
-                edge_idx = data_aug.edge_index.numpy()
-                _, edge_num = edge_idx.shape
-                idx_not_missing = [n for n in range(node_num) if (n in edge_idx[0] or n in edge_idx[1])]
+#             if args.aug == 'drop_ra':
+#                 edge_idx = data_aug.edge_index.numpy()
+#                 _, edge_num = edge_idx.shape
+#                 idx_not_missing = [n for n in range(node_num) if (n in edge_idx[0] or n in edge_idx[1])]
 
-                node_num_aug = len(idx_not_missing)
-                data_aug.x = data_aug.x[idx_not_missing]
+#                 node_num_aug = len(idx_not_missing)
+#                 data_aug.x = data_aug.x[idx_not_missing]
 
-                data_aug.batch = data.batch[idx_not_missing]
-                idx_dict = {idx_not_missing[n]: n for n in range(node_num_aug)}
-                edge_idx = [[idx_dict[edge_idx[0, n]], idx_dict[edge_idx[1, n]]] for n in range(edge_num) if not edge_idx[0, n] == edge_idx[1, n]]
-                data_aug.edge_index = torch.tensor(edge_idx).transpose_(0, 1)
+#                 data_aug.batch = data.batch[idx_not_missing]
+#                 idx_dict = {idx_not_missing[n]: n for n in range(node_num_aug)}
+#                 edge_idx = [[idx_dict[edge_idx[0, n]], idx_dict[edge_idx[1, n]]] for n in range(edge_num) if not edge_idx[0, n] == edge_idx[1, n]]
+#                 data_aug.edge_index = torch.tensor(edge_idx).transpose_(0, 1)
 
-                edge_idx = data_cp.edge_index.numpy()
-                _, edge_num = edge_idx.shape
-                idx_not_missing = [n for n in range(node_num) if (n in edge_idx[0] or n in edge_idx[1])]
+#                 edge_idx = data_cp.edge_index.numpy()
+#                 _, edge_num = edge_idx.shape
+#                 idx_not_missing = [n for n in range(node_num) if (n in edge_idx[0] or n in edge_idx[1])]
 
-                node_num_cp = len(idx_not_missing)
-                data_cp.x = data_cp.x[idx_not_missing]
+#                 node_num_cp = len(idx_not_missing)
+#                 data_cp.x = data_cp.x[idx_not_missing]
 
-                data_cp.batch = data.batch[idx_not_missing]
-                idx_dict = {idx_not_missing[n]: n for n in range(node_num_cp)}
-                edge_idx = [[idx_dict[edge_idx[0, n]], idx_dict[edge_idx[1, n]]] for n in range(edge_num) if
-                            not edge_idx[0, n] == edge_idx[1, n]]
-                data_cp.edge_index = torch.tensor(edge_idx).transpose_(0, 1)
+#                 data_cp.batch = data.batch[idx_not_missing]
+#                 idx_dict = {idx_not_missing[n]: n for n in range(node_num_cp)}
+#                 edge_idx = [[idx_dict[edge_idx[0, n]], idx_dict[edge_idx[1, n]]] for n in range(edge_num) if
+#                             not edge_idx[0, n] == edge_idx[1, n]]
+#                 data_cp.edge_index = torch.tensor(edge_idx).transpose_(0, 1)
 
             data_aug = data_aug.to(device)
             data_cp = data_cp.to(device)
