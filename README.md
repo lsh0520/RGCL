@@ -54,6 +54,3 @@ Some issues might occur due to the version mismatch.
 ## Acknowledgements
 
 The backbone implementation is reference to https://github.com/Shen-Lab/GraphCL.
-
-
-
